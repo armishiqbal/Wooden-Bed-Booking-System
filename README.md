@@ -1,9 +1,9 @@
-Wooden Bed Booking System
+## Wooden Bed Booking System
 
 A web-based booking management application developed using **Django** and **Django REST Framework (DRF)**. The system allows customers to book wooden beds online and enables administrators to manage bookings, customers, and bed information efficiently.
 
 
-Features
+## Features
 
 * Customer booking and reservation management
 * Add, view, update, and delete bookings (CRUD operations)
@@ -14,7 +14,7 @@ Features
 * Responsive and user-friendly interface
 
 
-Technologies Used
+## Technologies Used
 
 * Python
 * Django
@@ -31,7 +31,7 @@ Technologies Used
 * MVT (Model-View-Template) Architecture
 
 
-Project Structure
+## Project Structure
 
 Wooden-Bed-Booking-System/
 │
@@ -43,46 +43,46 @@ Wooden-Bed-Booking-System/
 ├── requirements.txt
 └── README.md
 
-Installation and Setup
+## Installation and Setup
 
-1. Clone the repository
+### 1. Clone the repository
 
 bash
 git clone https://github.com/armishiqbal/Wooden-Bed-Booking-System.git
 cd Wooden-Bed-Booking-System
 
 
-2. Create and activate a virtual environment
+### 2. Create and activate a virtual environment
 
 bash
 python -m venv venv
 
 
-Windows
+### Windows
 
 bash
 venv\Scripts\activate
 
 
-Linux/Mac
+### Linux/Mac
 
 bash
 source venv/bin/activate
 
 
-3. Install dependencies
+### 3. Install dependencies
 
 bash
 pip install -r requirements.txt
 
 
-4. Apply migrations
+### 4. Apply migrations
 
 bash
 python manage.py migrate
 
 
-5. Run the development server
+### 5. Run the development server
 
 bash
 python manage.py runserver
@@ -94,7 +94,7 @@ text
 http://127.0.0.1:8000/
 
 
- API Endpoints
+ ## API Endpoints
 
 | Method | Endpoint                  | Description          |
 | ------ | ------------------------- | -------------------- |
@@ -129,7 +129,7 @@ http://127.0.0.1:8000/
 
 
 
-### Live Demo
+## Live Demo
 
 PythonAnywhere:
 https://armishiqbal.pythonanywhere.com/
