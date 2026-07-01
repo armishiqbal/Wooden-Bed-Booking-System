@@ -129,13 +129,13 @@ http://127.0.0.1:8000/
 
 
 
-###Live Demo
+### Live Demo
 
 PythonAnywhere:
 https://armishiqbal.pythonanywhere.com/
  
 
-##Author
+## Author
 
 Armish Iqbal
 BS Computer Science Student
