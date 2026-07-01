@@ -107,14 +107,26 @@ http://127.0.0.1:8000/
 
 Screenshots
 
-Add screenshots of:
+## Screenshots
 
-* Home Page
-* Booking Form
-* Admin Dashboard
-* API Endpoints
+### Home Page
+![Home Page](home.png)
 
-Create a folder named `screenshots` and upload the images there.
+### Booking Form
+![Booking Form](bookingform.png)
+
+### Admin Panel
+![Admin Panel](adminform.png)
+
+### DB ADMINISTRATION
+![DB ADMINISTRATION](dbadministration.png)
+
+
+### BEDS
+![BED IMAGES](bedimages.png)
+
+### BEDS
+![BED IMAGE](bedimage.png)
 
 
 
