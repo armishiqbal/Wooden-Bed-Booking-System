@@ -1,4 +1,4 @@
-## Wooden Bed Booking System
+# Wooden Bed Booking System
 
 A web-based booking management application developed using **Django** and **Django REST Framework (DRF)**. The system allows customers to book wooden beds online and enables administrators to manage bookings, customers, and bed information efficiently.
 
@@ -137,7 +137,7 @@ https://armishiqbal.pythonanywhere.com/
 
 ## Author
 
-Armish Iqbal
+**Armish Iqbal**
 BS Computer Science Student
 Islamia University Bahawalpur
 GitHub: https://github.com/armishiqbal
