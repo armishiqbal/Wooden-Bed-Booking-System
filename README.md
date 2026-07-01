@@ -48,7 +48,7 @@ Installation and Setup
 1. Clone the repository
 
 bash
-git clone https://github.com/yourusername/Wooden-Bed-Booking-System.git
+git clone https://github.com/armishiqbal/Wooden-Bed-Booking-System.git
 cd Wooden-Bed-Booking-System
 
 
