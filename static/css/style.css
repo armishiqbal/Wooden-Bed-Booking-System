@@ -1,0 +1,27 @@
+/* Custom Styles for Wooden Bed Booking System */
+:root {
+    --primary-color: #212529;
+    --accent-color: #0d6efd;
+    --success-color: #198754;
+    --bg-light: #f8f9fa;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: #212529;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.card-bed img {
+    transition: transform 0.3s ease;
+}
+
+.card-bed:hover img {
+    transform: scale(1.03);
+}

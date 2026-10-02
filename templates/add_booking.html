@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Booking - Wooden Bed Booking System{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-color: #f0f2f5;
+    }
+    .booking-card {
+        background: #ffffff;
+        max-width: 550px;
+        margin: 40px auto;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .booking-header {
+        background: #0d6efd;
+        color: #ffffff;
+        text-align: center;
+        padding: 18px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+    .booking-body {
+        padding: 30px;
+    }
+    .form-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 6px;
+    }
+    .form-control {
+        padding: 10px 14px;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+    }
+    .btn-submit-booking {
+        background: #0d6efd;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 6px;
+        width: 100%;
+        border: none;
+        margin-top: 10px;
+        transition: background 0.2s;
+    }
+    .btn-submit-booking:hover {
+        background: #0b5ed7;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="booking-card">
+        <div class="booking-header">
+            Add Booking
+        </div>
+        <div class="booking-body">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST" action="{% url 'add_booking' %}">
+                {% csrf_token %}
+                <div>
+                    <label class="form-label">Customer name:</label>
+                    <input type="text" name="customer_name" class="form-control" required placeholder="e.g. Ahmed Khan">
+                </div>
+
+                <div>
+                    <label class="form-label">Cell:</label>
+                    <input type="text" name="cell" class="form-control" required placeholder="e.g. 03001234567">
+                </div>
+
+                <div>
+                    <label class="form-label">Day:</label>
+                    <input type="text" name="day" class="form-control" placeholder="e.g. Monday">
+                </div>
+
+                <div>
+                    <label class="form-label">Time:</label>
+                    <input type="text" name="time" class="form-control" placeholder="e.g. 3:00 PM">
+                </div>
+
+                <div>
+                    <label class="form-label">Bed detail:</label>
+                    <input type="text" name="bed_detail" class="form-control" value="{{ initial_bed }}" required placeholder="e.g. Luxury Double Bed">
+                </div>
+
+                <div>
+                    <label class="form-label">Total amount:</label>
+                    <input type="text" name="total_amount" class="form-control" value="{{ initial_amount }}" required placeholder="e.g. 100000">
+                </div>
+
+                <div>
+                    <label class="form-label">Delivery address:</label>
+                    <textarea name="delivery_address" class="form-control" rows="3" required placeholder="Enter complete delivery address"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit-booking">Submit Booking</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Wooden Bed Booking System - Home{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-banner {
+        position: relative;
+        background: url('{% static "images/hero_bed.jpg" %}') center/cover no-repeat #e8ded2;
+        min-height: 480px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .hero-content {
+        max-width: 800px;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(4px);
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .hero-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+    }
+    .hero-subtitle {
+        font-size: 19px;
+        font-weight: 600;
+        color: #2c2c2c;
+        margin-bottom: 0;
+    }
+    .card-bed {
+        background: #ffffff;
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        transition: transform 0.2s, box-shadow 0.2s;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .card-bed:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+    }
+    .card-img-top-bed {
+        height: 230px;
+        object-fit: cover;
+        width: 100%;
+        background-color: #eee;
+    }
+    .card-body-bed {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .bed-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 6px;
+    }
+    .bed-id {
+        font-size: 15px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 12px;
+    }
+    .bed-meta {
+        font-size: 15px;
+        color: #333;
+        margin-bottom: 6px;
+    }
+    .btn-book {
+        background-color: #198754;
+        color: #ffffff;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        margin-top: 15px;
+        border: none;
+        transition: background 0.2s;
+    }
+    .btn-book:hover {
+        background-color: #146c43;
+        color: #ffffff;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="hero-banner">
+    <div class="hero-content">
+        <h1 class="hero-title">Wooden Bed Booking System</h1>
+        <p class="hero-subtitle">Comfortable & Affordable Beds for Your Home, Order Now.</p>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row g-4">
+        {% for bed in beds %}
+        <div class="col-md-4">
+            <div class="card-bed">
+                {% if bed.image_url %}
+                    <img src="{{ bed.image_url }}" class="card-img-top-bed" alt="{{ bed.name }}">
+                {% else %}
+                    <div class="card-img-top-bed d-flex align-items-center justify-content-center text-muted">
+                        <span>🛏️ {{ bed.name }}</span>
+                    </div>
+                {% endif %}
+                <div class="card-body-bed">
+                    <div>
+                        <div class="bed-title">{{ bed.name }}</div>
+                        <div class="bed-id">Bed ID: {{ bed.id }}</div>
+                        <div class="bed-meta"><strong>Price:</strong> {{ bed.price }} PKR</div>
+                        <div class="bed-meta"><strong>Size:</strong> {{ bed.size }}</div>
+                    </div>
+                    <a href="{% url 'add_booking' %}?bed={{ bed.name|urlencode }}&price={{ bed.price }}" class="btn-book">Book Now</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <p class="text-muted">No beds registered yet. Add them in the <a href="/admin/">Django Admin Panel</a>.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

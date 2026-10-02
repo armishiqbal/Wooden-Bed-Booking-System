@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking Confirmed - Wooden Bed Booking System{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="card shadow-sm border-0 mx-auto" style="max-width: 600px; border-radius: 12px;">
+        <div class="card-body p-4 text-center">
+            <div class="mb-3 text-success" style="font-size: 54px;">✅</div>
+            <h2 class="fw-bold text-success mb-2">Booking Confirmed!</h2>
+            <p class="text-muted mb-4">Your order has been recorded in the database. Ref #{{ booking.id }}</p>
+
+            <div class="bg-light p-3 rounded-3 text-start mb-4">
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Customer:</div>
+                    <div class="col-8">{{ booking.customer_name }}</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Contact:</div>
+                    <div class="col-8">{{ booking.cell }}</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Bed Item:</div>
+                    <div class="col-8">{{ booking.bed_detail }}</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Amount:</div>
+                    <div class="col-8 text-primary fw-bold">PKR {{ booking.total_amount }}</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Delivery:</div>
+                    <div class="col-8">{{ booking.delivery_address }}</div>
+                </div>
+            </div>
+
+            <a href="{% url 'home' %}" class="btn btn-outline-dark px-4 me-2">Back to Catalog</a>
+            <a href="{% url 'add_booking' %}" class="btn btn-success px-4">New Booking</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
